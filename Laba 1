@@ -34,7 +34,7 @@ int main(int argc,char *argv[])
  {
  printf("No file name entered\n");
  }
- printf("Введине название файла еще раз\n");
+ printf("Enter the name of the file again \n");
  char *fname=(char *)malloc(1* sizeof(char));
  scanf("%s", fname);
  f = fopen(fname, "rs");
