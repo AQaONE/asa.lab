@@ -31,11 +31,10 @@ int interpolationSearch(int a, int n, p *pack) {
     
     while (lo <= hi && a >= pack[lo].c && a <= pack[hi].c)
     {
-        // Проверка позиции с сохранением
+        // Проверка с сохранением
         int pos = lo + (((double)(hi-lo) /
                          (pack[hi].c-pack[lo].c))*(a - pack[lo].c));
 
-        // Состояние цели найдено
         if (pack[pos].c == a) {
             comp++;
             return pos;
