@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -11,7 +10,7 @@
 unsigned long int comp = 0, moves = 0;
 double T;
 int s;
-// About reading from file
+// чтение из файла
 typedef struct package
 {
     double a;
@@ -25,30 +24,29 @@ struct bin_tree {
 typedef struct bin_tree node;
 
 int interpolationSearch(int a, int n, p *pack) {
-    // Find indexes of two corners
+    // поиск индексов
     int lo = 0, hi = (n - 1);
 
-    // Since array is sorted, an element present
-    // in array must be in range defined by corner
+    // поскольку массив отсортирован,элемент присутсвует 
+    
     while (lo <= hi && a >= pack[lo].c && a <= pack[hi].c)
     {
-        // Probing the position with keeping
-        // uniform distribution in mind.
+        // Проверка позиции с сохранением
         int pos = lo + (((double)(hi-lo) /
                          (pack[hi].c-pack[lo].c))*(a - pack[lo].c));
 
-        // Condition of target found
+        // Состояние цели найдено
         if (pack[pos].c == a) {
             comp++;
             return pos;
         }
 
-        // If x is larger, x is in upper part
+        // Если x больше, x находится в верхней части
         if (pack[pos].c < a) {
             lo = pos + 1;
             comp++;
         }
-        // If x is smaller, x is in lower part
+        // Если x меньше, x находится в нижней части
         else {
             hi = pos - 1;
             comp++;
@@ -132,7 +130,7 @@ node* search(node ** tree, int val) {
 }
 
 
-//ALL ABOUT SORT
+//сортировки
 // Bubble sort;
 void sort_bubble(unsigned long int n, p *pack) {
     unsigned long int i, j, tmp;
@@ -218,7 +216,7 @@ void sort_quick(p *pack, unsigned long int low, unsigned long int high)
 
 
 
-//ALL ABOUT SEARCH
+//поиски
 int linearSearch (unsigned int a, int n, p *pack) {
     int i ;
     unsigned int lol;
