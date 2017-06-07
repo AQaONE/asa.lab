@@ -303,7 +303,7 @@ int main(int argc,char *argv[])
         }
     }
 
-    printf("Choose a way of sort:\n 1 For insertion\n 2 For quick\n 3 For tree and tree search\n 4 For bubble\n ");
+    printf("Choose a way of sort:\n 1 For insertion\n 2 For quick\n 3 For tree\n 4 For bubble\n ");
     scanf("%d",&inputsortway);
 
     switch (inputsortway){
